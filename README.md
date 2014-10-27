@@ -14,23 +14,19 @@ Installation is pretty straight forward.
 
 Either add to a `libraries` directory and load the entire contents:
 
-	`
 	"autoload": {
 		"classmap": [
 			"app/DIRECTORY_WHERE_YOUR_LIBRARY_FILES_LIVE",
 		],
 	},
-	`
 
-OR load on a file by fila basis:
+OR load on a file by file basis:
 
-	`
 	"autoload": {
 		"files": [
 			"app/libraries/EUC.php"
 		]
 	},
-	`
 
 2. Call the `EUC::init()` method in the `app/filters.php` file
 
@@ -46,4 +42,3 @@ OR load on a file by fila basis:
 	`'privacy_document' => 'pages.privacy',`
 
 Thats it! You can then use some of the built in methods to control inclusions of Googe Analytics snippets and Cookie Notices/Banners or to manage a users acceptance of cookies on the site.
-

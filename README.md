@@ -1,6 +1,6 @@
 # European Cookie Law Compliance Class
 
-A Simple Laravel class to manage cookies to comply with the European cookie law
+A Simple set of classes to manage cookies to comply with the European cookie law
 
 ## Version
 

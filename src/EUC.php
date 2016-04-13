@@ -11,9 +11,10 @@
  * @since 0.1
  */
 
+namespace Euc;
+
 class EUC
 {
-
     /**
      * Sets a cookie when the application loads initially. This will be used to
      * determine the state of the users acceptance of cookies for the

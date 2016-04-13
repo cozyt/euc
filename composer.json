@@ -2,11 +2,16 @@
 	"name": "cozyt/euc",
 	"description": "A simple set of classes to manage cookies to comply with the European cookie law",
 	"homepage": "http://bitbucket.org/cozyt/euc",
-	"keywords": ["php", "javascript", "cookie", "EU"],
+	"keywords": ["php", "laravel", "cookie", "EU", "law"],
 	"authors": [
 		{
 			"name": "A Harvey",
 			"homepage": "https://bitbucket.org/cozyt"
 		}
-	]
+	],
+    "autoload": {
+        "psr-4": {
+            "Euc\\": "src/"
+        }
+    }
 }

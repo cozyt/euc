@@ -10,22 +10,24 @@ A Simple set of classes to manage cookies to comply with the _(silly)_ European 
 
 Installation is pretty straight forward.
 
-1. Add the class to Laravel Autoloader, I choose to do this in Composer but however is best for you should still work
+1. Add the package to your `composer.json` file. As it's not yet registered on Packagist, you might want to add the full repository
 
 ```json
-"autoload": {
-	"files": [
-		"app/libraries/EUC.php",
-        "app/libraries/EucMiddleware.php",
-        "app/libraries/EucController.php"
-	]
-},
+    "require": [
+        "cozyt/euc": "1.*",
+    ],
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/cozyt/euc"
+        }
+    ],
 ```
 
 2. Register the middleware class in your `app\Http\Kernel.php` as a `$routeMiddleware` or listed as part of a middleware group.
 
 ```php
-\EucMiddleware::class,
+\Euc\Middleware\InitEuc::class,
 ```
 
 3. Add a setting called `privacy_document` to the `app/config/app.php` config file. This should be the location of the application's privacy view file and so should be defined in the same way as it would be if you were calling `View::make()`.

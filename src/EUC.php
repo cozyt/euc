@@ -13,6 +13,11 @@
 
 namespace Euc;
 
+use Config;
+use Cookie;
+use File;
+use View;
+
 class EUC
 {
     /**
@@ -98,12 +103,21 @@ class EUC
     /**
      * Current version of the cookie
      *
-     * @dependencies string Config::get('app.privacy_document')) Path to the privacy policy document defined as a view path
      * @return int
      */
     public static function currentVersion()
     {
-        return File::lastModified(Config::get('view.paths.0') . '/' . str_replace('.', '/', Config::get('app.privacy_document')) . '.blade.php');
+        $filepath = Config::get('view.paths.0') . '/' . str_replace('.', '/', Config::get('app.privacy_document'));
+
+        if (file_exists($filepath . '.php')) {
+            return File::lastModified($filepath . '.php');
+        }
+
+        if(file_exists($filepath . '.blade.php')) {
+            return File::lastModified($filepath . '.blade.php');
+        }
+
+        return 0;
     }
 
 

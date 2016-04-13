@@ -2,6 +2,7 @@
 
 namespace Euc\Middleware;
 
+use Closure;
 use Euc\EUC;
 
 class InitEuc

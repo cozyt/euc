@@ -153,7 +153,13 @@ class EUC
      */
     public static function isCurrent()
     {
-        return self::get() == self::currentVersion();
+        $cookieVal = self::get();
+
+        if ($cookieVal === null) {
+            return false;
+        }
+
+        return $cookieVal === self::currentVersion();
     }
 
 }

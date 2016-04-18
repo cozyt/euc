@@ -159,7 +159,7 @@ class EUC
             return false;
         }
 
-        return $cookieVal === self::currentVersion();
+        return $cookieVal == self::currentVersion();
     }
 
 }
